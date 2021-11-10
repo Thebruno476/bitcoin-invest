@@ -39,8 +39,10 @@ class Bitcoin:
         plt.show()
 
     def _see_percentual_return(self):
-        self.cripo_df_normalizated = self.cripto_df.copy()
+        cripto_df = self._get_data()
+        self.cripo_df_normalizated = cripto_df.copy()
         for i in self.cripo_df_normalizated.columns[:]:
             self.cripo_df_normalizated[i] = (self.cripo_df_normalizated[i] / self.cripo_df_normalizated[i][0]) * 100
         print(f'Retorno percentual\n{self.cripo_df_normalizated}')
-        self.cripo_df_normalizated.plot('Retorno percentual')
+        self.cripo_df_normalizated.plot(title='Retorno percentual')
+        plt.show()
