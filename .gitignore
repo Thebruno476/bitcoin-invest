@@ -1,0 +1,3 @@
+# Ignorando a venv e o cache
+venv
+__pycache__
